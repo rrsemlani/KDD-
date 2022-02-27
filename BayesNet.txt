@@ -1,0 +1,85 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     Group 15 Original
+Instances:    178
+Attributes:   17
+              Country
+              Year
+              Rank
+              Total
+              C1: Security Apparatus
+              C2: Factionalized Elites
+              C3: Group Grievance
+              E1: Economy
+              E2: Economic Inequality
+              E3: Human Flight and Brain Drain
+              P1: State Legitimacy
+              P2: Public Services
+              P3: Human Rights
+              S1: Demographic Pressures
+              S2: Refugees and IDPs
+              X1: External Intervention
+              Fragile State
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=17 #classindex=16
+Network structure (nodes followed by parents)
+Country(178): Fragile State 
+Year(1): Fragile State 
+Rank(167): Fragile State 
+Total(4): Fragile State 
+C1: Security Apparatus(4): Fragile State 
+C2: Factionalized Elites(4): Fragile State 
+C3: Group Grievance(3): Fragile State 
+E1: Economy(4): Fragile State 
+E2: Economic Inequality(4): Fragile State 
+E3: Human Flight and Brain Drain(4): Fragile State 
+P1: State Legitimacy(4): Fragile State 
+P2: Public Services(4): Fragile State 
+P3: Human Rights(5): Fragile State 
+S1: Demographic Pressures(4): Fragile State 
+S2: Refugees and IDPs(4): Fragile State 
+X1: External Intervention(5): Fragile State 
+Fragile State(4): 
+LogScore Bayes: -3955.9929510788998
+LogScore BDeu: -14954.136898535353
+LogScore MDL: -11269.783969709357
+LogScore ENTROPY: -7292.765094860184
+LogScore AIC: -8827.765094860184
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         175               98.3146 %
+Incorrectly Classified Instances         3                1.6854 %
+Kappa statistic                          0.9747
+Mean absolute error                      0.0118
+Root mean squared error                  0.0896
+Relative absolute error                  3.539  %
+Root relative squared error             21.9735 %
+Total Number of Instances              178     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.007    0.974      1.000    0.987      0.984    1.000     0.999     Alert
+                 0.977    0.011    0.988      0.977    0.983      0.966    0.999     0.999     Warning
+                 0.973    0.007    0.973      0.973    0.973      0.966    0.999     0.997     Stable
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Sustainable
+Weighted Avg.    0.983    0.008    0.983      0.983    0.983      0.973    0.999     0.999     
+
+=== Confusion Matrix ===
+
+  a  b  c  d   <-- classified as
+ 38  0  0  0 |  a = Alert
+  1 85  1  0 |  b = Warning
+  0  1 36  0 |  c = Stable
+  0  0  0 16 |  d = Sustainable
